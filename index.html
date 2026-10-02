@@ -1,0 +1,3250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Prafull 🤎</title>
+
+<style>
+
+/* =====================================================
+   GOOGLE FONTS
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+    --cream: #f8f3e9;
+    --light-cream: #fffdf8;
+    --beige: #e9ddca;
+    --dark-beige: #d8c3a8;
+    --brown: #755b47;
+    --dark-brown: #49382e;
+    --gold: #b18b55;
+    --text: #806c59;
+}
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark-brown);
+}
+
+button,
+input {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =====================================================
+   LOCK SCREEN
+===================================================== */
+
+#lockScreen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fffdf8,
+            #f0e5d4 55%,
+            #e4d2bc
+        );
+}
+
+.lock-card {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+
+    padding: 50px 30px;
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(80,55,35,0.15);
+
+    animation: fadeUp 1s ease;
+}
+
+.lock-heart {
+    font-size: 70px;
+    margin-bottom: 15px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.lock-card h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.lock-card p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+#passwordInput,
+#nameInput {
+    width: 100%;
+    padding: 15px 18px;
+
+    border: 1px solid var(--dark-beige);
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.8);
+    outline: none;
+
+    font-size: 15px;
+    color: var(--dark-brown);
+}
+
+#passwordInput:focus,
+#nameInput:focus {
+    border-color: var(--gold);
+}
+
+.main-btn {
+    border: none;
+    border-radius: 50px;
+
+    padding: 14px 25px;
+
+    margin-top: 15px;
+
+    background: var(--dark-brown);
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(73,56,46,0.2);
+}
+
+#hintText,
+#nameHint {
+    margin-top: 18px;
+    min-height: 25px;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   MAIN WEBSITE
+===================================================== */
+
+#birthdayPage {
+    display: none;
+}
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #fffdf8,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #f8f3e9,
+            #e9ddca
+        );
+}
+
+.hero-content {
+    max-width: 850px;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero-small {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--gold);
+}
+
+.hero h1 {
+    font-size: clamp(55px, 10vw, 100px);
+    margin: 20px 0 5px;
+}
+
+.hero h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: clamp(20px, 4vw, 32px);
+}
+
+.hero-heart {
+    font-size: 70px;
+    margin-top: 25px;
+    animation: heartbeat 1.5s infinite;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section {
+    padding: 90px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: clamp(32px, 6vw, 50px);
+    margin: 10px 0;
+}
+
+.section-title p {
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   NAME SECTION
+===================================================== */
+
+.name-card {
+    max-width: 550px;
+    margin: auto;
+
+    background: var(--light-cream);
+
+    padding: 45px 30px;
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(80,55,35,0.08);
+}
+
+.name-card h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.name-card p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   BIRTHDAY LETTER
+===================================================== */
+
+.letter {
+    max-width: 800px;
+    margin: auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.9),
+            rgba(241,229,211,0.8)
+        );
+
+    padding: 50px 35px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(80,55,35,0.10);
+
+    line-height: 2;
+}
+
+.letter h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 38px;
+}
+
+.letter p {
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   MEMORIES
+===================================================== */
+
+.memories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.memory {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    background: var(--light-cream);
+
+    box-shadow:
+        0 15px 40px rgba(80,55,35,0.12);
+
+    transition: 0.4s;
+}
+
+.memory:hover {
+    transform: translateY(-7px);
+}
+
+.memory img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s;
+}
+
+.memory:hover img {
+    transform: scale(1.04);
+}
+
+.memory-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(40,25,15,0.8)
+        );
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   MEMORY MODAL
+===================================================== */
+
+#memoryModal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    background: rgba(40,30,20,0.65);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.modal-card {
+    width: 100%;
+    max-width: 550px;
+
+    background: var(--light-cream);
+
+    border-radius: 25px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    animation: fadeUp 0.5s ease;
+}
+
+.modal-card h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.modal-card p {
+    line-height: 1.8;
+}
+
+.close-btn {
+    margin-top: 25px;
+    border: none;
+
+    background: var(--dark-brown);
+    color: white;
+
+    padding: 11px 22px;
+    border-radius: 50px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   SURPRISE QUESTION
+===================================================== */
+
+.surprise-question {
+    text-align: center;
+
+    max-width: 700px;
+    margin: auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.85),
+            rgba(240,229,211,0.75)
+        );
+
+    padding: 55px 30px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(80,55,35,0.10);
+
+    animation: fadeUp 1s ease;
+}
+
+.surprise-question .big-heart {
+    font-size: 60px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.surprise-question h2 {
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.surprise-question p {
+    line-height: 1.8;
+}
+
+.press-no {
+    margin-top: 12px;
+
+    font-size: 13px;
+    color: var(--gold);
+
+    font-weight: 500;
+
+    animation: gentleBounce 1.5s infinite;
+}
+
+.surprise-buttons {
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+.yes-btn {
+    background: var(--dark-brown);
+}
+
+.no-btn {
+    background: #c8b9a5;
+}
+
+#noMessage {
+    margin-top: 20px;
+
+    min-height: 55px;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.yes-after-no {
+    transform: scale(1.15);
+
+    box-shadow:
+        0 10px 30px rgba(73,56,46,0.25);
+
+    animation: yesPulse 1.2s infinite;
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.video-surprise {
+    display: none;
+}
+
+.video-card {
+    max-width: 850px;
+    margin: auto;
+
+    background: var(--light-cream);
+
+    padding: 25px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(80,55,35,0.10);
+
+    text-align: center;
+}
+
+.special-video {
+    width: 100%;
+
+    max-height: 600px;
+
+    border-radius: 20px;
+
+    display: block;
+
+    background: #222;
+}
+
+.video-hint {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   BALLOONS
+===================================================== */
+
+.balloon-area {
+    min-height: 300px;
+
+    position: relative;
+
+    margin-top: 25px;
+}
+
+.balloon {
+    position: absolute;
+
+    border: none;
+    background: none;
+
+    font-size: 65px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    filter:
+        drop-shadow(
+            0 10px 10px rgba(0,0,0,0.08)
+        );
+}
+
+.balloon:hover {
+    transform: translateY(-8px) scale(1.08);
+}
+
+.balloon1 {
+    left: 10%;
+    top: 30px;
+}
+
+.balloon2 {
+    right: 12%;
+    top: 20px;
+}
+
+.balloon3 {
+    left: 25%;
+    bottom: 20px;
+}
+
+.balloon4 {
+    right: 28%;
+    bottom: 5px;
+}
+
+.balloon.pop {
+    animation: balloonPop 0.4s forwards;
+    pointer-events: none;
+}
+
+.balloon-message {
+    min-height: 80px;
+
+    padding: 20px;
+
+    margin-top: 15px;
+
+    border-radius: 20px;
+
+    background: var(--beige);
+
+    line-height: 1.8;
+
+    transition: opacity 0.2s;
+}
+
+.all-balloons-message {
+    display: none;
+
+    margin-top: 35px;
+
+    padding: 35px 25px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #eee0ce
+        );
+
+    animation: fadeUp 0.8s ease;
+}
+
+.all-balloons-message.show {
+    display: block;
+}
+
+.final-heart {
+    font-size: 60px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.all-balloons-message h3 {
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.all-balloons-message p {
+    line-height: 1.9;
+    margin-top: 15px;
+}
+
+
+/* =====================================================
+   OPEN WHEN LETTERS
+===================================================== */
+
+.open-when-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.open-letter {
+    background: var(--light-cream);
+
+    padding: 30px 20px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 35px rgba(80,55,35,0.08);
+
+    transition: 0.3s;
+}
+
+.open-letter:hover {
+    transform: translateY(-5px);
+}
+
+.open-letter span {
+    font-size: 45px;
+}
+
+.open-letter h3 {
+    margin: 15px 0 8px;
+}
+
+.open-letter p {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   GIFT BOX
+===================================================== */
+
+.gift-section {
+    text-align: center;
+}
+
+.gift-box {
+    font-size: 100px;
+
+    cursor: pointer;
+
+    display: inline-block;
+
+    margin: 20px;
+
+    transition: 0.4s;
+}
+
+.gift-box:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.gift-message {
+    display: none;
+
+    max-width: 650px;
+    margin: auto;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: var(--light-cream);
+
+    line-height: 1.9;
+
+    animation: fadeUp 0.7s ease;
+}
+
+.gift-message.show {
+    display: block;
+}
+
+
+/* =====================================================
+   STORY TIMELINE
+===================================================== */
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+}
+
+.timeline-item {
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    background: var(--light-cream);
+
+    border-left:
+        4px solid var(--gold);
+
+    border-radius: 0 20px 20px 0;
+
+    box-shadow:
+        0 10px 30px rgba(80,55,35,0.07);
+}
+
+.timeline-item h3 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.timeline-item p {
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+.cake-section {
+    text-align: center;
+}
+
+.cake {
+    position: relative;
+
+    width: 240px;
+    height: 180px;
+
+    margin: 50px auto 30px;
+}
+
+.cake-top {
+    position: absolute;
+
+    width: 210px;
+    height: 60px;
+
+    left: 15px;
+    top: 30px;
+
+    background: #d8c3a8;
+
+    border-radius: 50%;
+}
+
+.cake-body {
+    position: absolute;
+
+    width: 210px;
+    height: 100px;
+
+    left: 15px;
+    top: 60px;
+
+    background: #c7a98b;
+
+    border-radius: 10px 10px 25px 25px;
+}
+
+.cream {
+    position: absolute;
+
+    width: 210px;
+    height: 35px;
+
+    left: 15px;
+    top: 75px;
+
+    background: #fffdf8;
+
+    border-radius: 50%;
+}
+
+.candle {
+    position: absolute;
+
+    width: 12px;
+    height: 50px;
+
+    left: 114px;
+    top: -20px;
+
+    background: var(--gold);
+
+    border-radius: 5px;
+}
+
+.flame {
+    position: absolute;
+
+    width: 20px;
+    height: 28px;
+
+    left: 110px;
+    top: -48px;
+
+    font-size: 25px;
+
+    transition: 0.3s;
+}
+
+.flame.off {
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+/* =====================================================
+   REASONS
+===================================================== */
+
+.reason-card {
+    max-width: 750px;
+
+    margin: auto;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.9),
+            rgba(240,229,211,0.8)
+        );
+
+    padding: 50px 30px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(80,55,35,0.10);
+}
+
+.reason-number {
+    font-size: 55px;
+
+    animation: heartbeat 1.5s infinite;
+
+    margin-bottom: 20px;
+}
+
+#reasonText {
+    min-height: 100px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+.final-section {
+    text-align: center;
+}
+
+.final-message {
+    display: none;
+
+    max-width: 800px;
+
+    margin: 30px auto 0;
+
+    padding: 45px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #eadbc6
+        );
+
+    border-radius: 30px;
+
+    line-height: 2;
+
+    box-shadow:
+        0 20px 50px rgba(80,55,35,0.12);
+
+    animation: fadeUp 1s ease;
+}
+
+.final-message.show {
+    display: block;
+}
+
+.final-message h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+.music-button {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 500;
+
+    border: none;
+
+    background: var(--dark-brown);
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    animation:
+        floatHeart 7s linear forwards;
+
+    color: rgba(117,91,71,0.4);
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti {
+    position: fixed;
+
+    top: -30px;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall 3s linear forwards;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes gentleBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes yesPulse {
+
+    0%,
+    100% {
+        transform: scale(1.15);
+    }
+
+    50% {
+        transform: scale(1.22);
+    }
+}
+
+@keyframes balloonPop {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes floatHeart {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+@keyframes confettiFall {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .section {
+        padding: 65px 16px;
+    }
+
+    .lock-card {
+        padding: 40px 22px;
+    }
+
+    .lock-card h1 {
+        font-size: 35px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .memories {
+        grid-template-columns: 1fr;
+    }
+
+    .memory img {
+        height: 300px;
+    }
+
+    .surprise-question h2 {
+        font-size: 31px;
+    }
+
+    .open-when-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .balloon {
+        font-size: 52px;
+    }
+
+    .balloon1 {
+        left: 5%;
+    }
+
+    .balloon2 {
+        right: 5%;
+    }
+
+    .balloon3 {
+        left: 15%;
+    }
+
+    .balloon4 {
+        right: 15%;
+    }
+
+    .letter {
+        padding: 35px 22px;
+    }
+
+    #reasonText {
+        font-size: 15px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOCK SCREEN
+===================================================== -->
+
+<div id="lockScreen">
+
+    <div class="lock-card">
+
+        <div class="lock-heart">
+            ♡
+        </div>
+
+        <h1>A Little Secret...</h1>
+
+        <p>
+            Before you enter, you need to know
+            the three magical words. 🤎
+        </p>
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="Enter the secret..."
+        >
+
+        <button
+            class="main-btn"
+            onclick="unlock()"
+        >
+            Unlock ♡
+        </button>
+
+        <div id="hintText"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<div id="birthdayPage">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            A little something made with love
+        </div>
+
+        <h1>Happy Birthday</h1>
+
+        <h2>
+            Prafull 🤎
+        </h2>
+
+        <div class="hero-heart">
+            ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NAME VERIFICATION
+===================================================== -->
+
+<section
+    class="section"
+    id="nameSection"
+>
+
+    <div class="section-title">
+
+        <span>WAIT... ONE MORE THING ♡</span>
+
+        <h2>
+            Is this really you?
+        </h2>
+
+        <p>
+            Type your name to unlock what I wrote
+            especially for you.
+        </p>
+
+    </div>
+
+
+    <div class="name-card">
+
+        <h2>
+            Who are you? 👀
+        </h2>
+
+        <p>
+            I hope you know the answer to this one.
+        </p>
+
+        <input
+            type="text"
+            id="nameInput"
+            placeholder="Enter your name..."
+        >
+
+        <button
+            class="main-btn"
+            onclick="verifyName()"
+        >
+            Reveal ♡
+        </button>
+
+        <div id="nameHint"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PERSONAL CONTENT
+===================================================== -->
+
+<div
+    id="personalContent"
+    class="hidden"
+>
+
+
+<!-- =====================================================
+     BIRTHDAY LETTER
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>FOR YOU 🤎</span>
+
+        <h2>
+            A Letter For You
+        </h2>
+
+    </div>
+
+
+    <div class="letter">
+
+        <h2>
+            Mr Prafull Panchal,
+        </h2>
+
+        <p>
+            Happy Birthday to someone who became
+            special to me in the most unexpected way.
+        </p>
+
+        <p>
+            Sometimes I think about how randomly
+            we met and how that random moment
+            somehow turned into so many memories.
+        </p>
+
+        <p>
+            From spending hours together,
+            laughing about stupid things,
+            talking about everything and nothing,
+            to all the hugs, kisses, cuddles,
+            fights and making up...
+            somehow you became a beautiful part
+            of my everyday life.
+        </p>
+
+        <p>
+            And then you left Gurgaon and moved
+            to Mumbai for your career.
+            I still remember how emotional that
+            moment was because by then,
+            you weren't just someone I knew.
+            You had become someone I genuinely cared about.
+        </p>
+
+        <p>
+            Distance may change routines,
+            cities and the number of times
+            we get to see each other,
+            but it doesn't erase what someone
+            means to you.
+        </p>
+
+        <p>
+            So today, I just want you to know
+            that I am genuinely proud of you.
+            I hope this new year of your life
+            brings you growth, happiness,
+            success and countless reasons to smile.
+        </p>
+
+        <p>
+            Thank you for being you.
+            Thank you for the memories.
+            And thank you for becoming
+            someone my heart will always remember.
+        </p>
+
+        <p>
+            Happy Birthday, Prafull. ❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMORIES
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>OUR LITTLE WORLD 📸</span>
+
+        <h2>
+            Memories
+        </h2>
+
+        <p>
+            Click each picture.
+            There is a little message hidden inside. ♡
+        </p>
+
+    </div>
+
+
+    <div class="memories">
+
+        <div
+            class="memory"
+            onclick="showNote(0)"
+        >
+
+            <img
+                src="memory1.jpg"
+                alt="Memory 1"
+            >
+
+            <div class="memory-label">
+                us together ♡
+            </div>
+
+        </div>
+
+
+        <div
+            class="memory"
+            onclick="showNote(1)"
+        >
+
+            <img
+                src="memory2.jpg"
+                alt="Memory 2"
+            >
+
+            <div class="memory-label">
+                My favourite moment 🤎
+            </div>
+
+        </div>
+
+
+        <div
+            class="memory"
+            onclick="showNote(2)"
+        >
+
+            <img
+                src="memory3.jpg"
+                alt="Memory 3"
+            >
+
+            <div class="memory-label">
+                A little happiness 🌷
+            </div>
+
+        </div>
+
+
+        <div
+            class="memory"
+            onclick="showNote(3)"
+        >
+
+            <img
+                src="memory4.jpg"
+                alt="Memory 4"
+            >
+
+            <div class="memory-label">
+                Forever remembered ✨
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMORY MODAL
+===================================================== -->
+
+<div
+    id="memoryModal"
+    onclick="closeOutside(event)"
+>
+
+    <div class="modal-card">
+
+        <h3 id="modalTitle"></h3>
+
+        <p id="modalText"></p>
+
+        <button
+            class="close-btn"
+            onclick="closeNote()"
+        >
+            Close ♡
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SURPRISE QUESTION
+===================================================== -->
+
+<section class="section">
+
+    <div
+        class="surprise-question"
+        id="surpriseQuestion"
+    >
+
+        <div class="big-heart">
+            ♡
+        </div>
+
+        <h2>
+            Do you want a small surprise?
+        </h2>
+
+        <p>
+            There's one more little thing I made
+            for you... but before anything...
+        </p>
+
+        <div class="press-no">
+            Psst... press NO first 👀
+        </div>
+
+        <div class="surprise-buttons">
+
+            <button
+                class="main-btn yes-btn"
+                id="yesButton"
+                onclick="openSurprise()"
+            >
+                YES 🤎
+            </button>
+
+            <button
+                class="main-btn no-btn"
+                id="noButton"
+                onclick="sayNo()"
+            >
+                NO 🙈
+            </button>
+
+        </div>
+
+        <p id="noMessage"></p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VIDEO SURPRISE
+===================================================== -->
+
+<section
+    class="section video-surprise"
+    id="videoSurprise"
+>
+
+    <div class="section-title">
+
+        <span>SOMETHING SPECIAL 🎈</span>
+
+        <h2>
+            A Little Surprise For You
+        </h2>
+
+        <p>
+            Watch the video first...
+            then pop all four balloons to discover
+            four little messages from me. ♡
+        </p>
+
+    </div>
+
+
+    <div class="video-card">
+
+        <video
+            class="special-video"
+            id="specialVideo"
+            controls
+            playsinline
+            preload="metadata"
+        >
+
+            <source
+                src="special-video.mp4"
+                type="video/mp4"
+            >
+
+            Your browser does not support this video.
+
+        </video>
+
+
+        <p class="video-hint">
+
+            🎬 Watch the video,
+            then pop the balloons below 🎈
+
+        </p>
+
+
+        <div class="balloon-area">
+
+            <button
+                class="balloon balloon1"
+                id="balloon1"
+                onclick="popBalloon(1)"
+            >
+                🎈
+            </button>
+
+
+            <button
+                class="balloon balloon2"
+                id="balloon2"
+                onclick="popBalloon(2)"
+            >
+                🎈
+            </button>
+
+
+            <button
+                class="balloon balloon3"
+                id="balloon3"
+                onclick="popBalloon(3)"
+            >
+                🎈
+            </button>
+
+
+            <button
+                class="balloon balloon4"
+                id="balloon4"
+                onclick="popBalloon(4)"
+            >
+                🎈
+            </button>
+
+        </div>
+
+
+        <div
+            id="balloonMessage"
+            class="balloon-message"
+        >
+
+            Pop a balloon to find
+            a little message from me. 🤎
+
+        </div>
+
+
+        <div
+            id="allBalloonsMessage"
+            class="all-balloons-message"
+        >
+
+            <div class="final-heart">
+                ♡
+            </div>
+
+            <h3>
+                You found them all...
+            </h3>
+
+            <br>
+
+            <p>
+                Four little balloons.
+                Four little messages.
+                But honestly, there are a million things
+                I'd still want to tell you. 🥹
+            </p>
+
+            <p>
+                No matter how far you are,
+                some people always remain close to the heart.
+                And you're one of those people. 🤎
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OPEN WHEN LETTERS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>FOR DIFFERENT DAYS 💌</span>
+
+        <h2>
+            Open When...
+        </h2>
+
+        <p>
+            Little letters for whenever you need them.
+        </p>
+
+    </div>
+
+
+    <div class="open-when-grid">
+
+        <div
+            class="open-letter"
+            onclick="alert('Open when you miss me: Just remember that somewhere, someone is missing you too. 🤎')"
+        >
+
+            <span>
+                🌙
+            </span>
+
+            <h3>
+                You miss me
+            </h3>
+
+            <p>
+                Open this when distance feels a little harder.
+            </p>
+
+        </div>
+
+
+        <div
+            class="open-letter"
+            onclick="alert('Open when you feel sad: Whatever is bothering you, breathe. You do not have to figure everything out at once. You are cared for. ❤️')"
+        >
+
+            <span>
+                🥺
+            </span>
+
+            <h3>
+                You're sad
+            </h3>
+
+            <p>
+                A tiny reminder that you're not alone.
+            </p>
+
+        </div>
+
+
+        <div
+            class="open-letter"
+            onclick="alert('Open when you need motivation: Keep going. The version of you that you are becoming is worth every difficult day. 🤎')"
+        >
+
+            <span>
+                ✨
+            </span>
+
+            <h3>
+                You need motivation
+            </h3>
+
+            <p>
+                For the days when you need a little push.
+            </p>
+
+        </div>
+
+
+        <div
+            class="open-letter"
+            onclick="alert('Open when you are happy: I hope you enjoy every second of your happiness. Seeing you happy will always make me happy too. 🥹')"
+        >
+
+            <span>
+                ☀️
+            </span>
+
+            <h3>
+                You're happy
+            </h3>
+
+            <p>
+                Because your happiness deserves to be celebrated.
+            </p>
+
+        </div>
+
+
+        <div
+            class="open-letter"
+            onclick="alert('Open when you need a hug: Imagine the biggest, warmest hug right now. No words needed. Just a hug. 🤗')"
+        >
+
+            <span>
+                🤗
+            </span>
+
+            <h3>
+                You need a hug
+            </h3>
+
+            <p>
+                Consider this your virtual hug.
+            </p>
+
+        </div>
+
+
+        <div
+            class="open-letter"
+            onclick="alert('Open when you need to remember how special you are: You are much more important to people than you probably realise. And yes, that includes me. ❤️')"
+        >
+
+            <span>
+                ❤️
+            </span>
+
+            <h3>
+                You need a reminder
+            </h3>
+
+            <p>
+                A reminder of how much you matter.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MYSTERY GIFT
+===================================================== -->
+
+<section class="section gift-section">
+
+    <div class="section-title">
+
+        <span>ONE LAST LITTLE THING 🎁</span>
+
+        <h2>
+            Your Mystery Gift
+        </h2>
+
+        <p>
+            Click the box.
+            No cheating. 👀
+        </p>
+
+    </div>
+
+
+    <div
+        class="gift-box"
+        id="giftBox"
+        onclick="openGift()"
+    >
+        🎁
+    </div>
+
+
+    <div
+        class="gift-message"
+        id="giftMessage"
+    >
+
+        <h3>
+            Surprise! 🎉
+        </h3>
+
+        <br>
+
+        <p>
+            Your actual gift isn't inside this box.
+            It's every memory, every laugh,
+            every hug, every conversation
+            and every little moment we've shared.
+        </p>
+
+        <p>
+            Those are the things I hope we never forget. 🤎
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OUR STORY
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>OUR STORY ♡</span>
+
+        <h2>
+            Little Chapters
+        </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>
+                The Random Beginning
+            </h3>
+
+            <p>
+                A random meeting at the office
+                somehow became the beginning
+                of something I never expected.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                Getting Closer
+            </h3>
+
+            <p>
+                Slowly, conversations became longer,
+                meetings became more special,
+                and you became part of my everyday life.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                The Memories
+            </h3>
+
+            <p>
+                The hugs, kisses, cuddles,
+                laughs, silly fights and
+                countless conversations.
+                So many little moments became memories.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                Mumbai
+            </h3>
+
+            <p>
+                Then came the day you left Gurgaon
+                for Mumbai and your career.
+                Distance changed things,
+                but it didn't erase the memories.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                And Now...
+            </h3>
+
+            <p>
+                Wherever life takes us,
+                I'm grateful that our paths crossed.
+                Some people really do leave
+                a permanent little mark on your heart. 🤎
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CAKE
+===================================================== -->
+
+<section class="section cake-section">
+
+    <div class="section-title">
+
+        <span>MAKE A WISH 🎂</span>
+
+        <h2>
+            Your Birthday Cake
+        </h2>
+
+        <p>
+            Close your eyes, make a wish,
+            and blow the candle. ✨
+        </p>
+
+    </div>
+
+
+    <div class="cake">
+
+        <div class="flame" id="flame">
+            🔥
+        </div>
+
+        <div class="candle"></div>
+
+        <div class="cake-top"></div>
+
+        <div class="cream"></div>
+
+        <div class="cake-body"></div>
+
+    </div>
+
+
+    <button
+        class="main-btn"
+        onclick="blowCandles()"
+    >
+        Blow the candle 🕯️
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     100 REASONS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>
+            100 LITTLE REASONS ♡
+        </span>
+
+        <h2>
+            Reasons Why I Love You
+        </h2>
+
+        <p>
+            I could probably write a thousand...
+            but here are 100 little reasons
+            that make you so special to me. 🤎
+        </p>
+
+    </div>
+
+
+    <div class="reason-card">
+
+        <div class="reason-number">
+            ♡
+        </div>
+
+        <p id="reasonText">
+            I love your smile. ❤️
+        </p>
+
+        <button
+            class="main-btn"
+            onclick="nextReason()"
+        >
+            Another reason 🤎
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="section final-section">
+
+    <div class="section-title">
+
+        <span>
+            BEFORE YOU GO...
+        </span>
+
+        <h2>
+            One Last Thing
+        </h2>
+
+        <p>
+            There is something I really want you
+            to remember.
+        </p>
+
+    </div>
+
+
+    <button
+        class="main-btn"
+        id="finalButton"
+        onclick="revealFinal()"
+    >
+        Click Me ♡
+    </button>
+
+
+    <div
+        class="final-message"
+        id="finalMessage"
+    >
+
+        <h2>
+            DUDU   ,
+        </h2>
+
+        <p>
+            If you ever wonder whether you matter
+            to me, I hope this little website
+            answers that question.
+        </p>
+
+        <p>
+            You became important to me in a way
+            I never planned.
+        </p>
+
+        <p>
+            I don't know what every tomorrow
+            will look like, but I know that
+            I will always be grateful for
+            the memories, laughter, comfort,
+            craziness and happiness you've
+            brought into my life.
+        </p>
+
+        <p>
+            So wherever you are,
+            whatever you're doing,
+            and however far Mumbai may feel...
+            please remember that there is someone
+            here who genuinely cares about you.
+        </p>
+
+        <p>
+            Happy Birthday once again. ❤️
+        </p>
+
+        <p>
+            Keep smiling.
+            Keep growing.
+            Keep being YOU.
+        </p>
+
+        <br>
+
+        <strong>
+            You are, and will always be,
+            one of my favourite people and trust me i know your trust break several time but I swear to GOD 
+             you are the one i love a lot and always i am there for you no matter what the 
+             situtation is i am always with you whether we talk to each other or not  
+             And no need to third persons help for video call and all you can directly CALL me samjh aaya dudu 
+             I LOVE YOU! I MISS YOU
+             just waiting to see you. 🤎
+        </strong>
+
+    </div>
+
+</section>
+
+
+</div>
+<!-- END PERSONAL CONTENT -->
+
+
+</div>
+<!-- END BIRTHDAY PAGE -->
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio
+    id="bgMusic"
+    loop
+>
+
+    <source
+        src="birthday-song.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+<button
+    class="music-button"
+    id="musicBtn"
+    onclick="toggleMusic()"
+>
+    ♫ Play music
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   SECRET CODE
+===================================================== */
+
+const SECRET = "I love you";
+
+
+function unlock() {
+
+    const entered =
+        document
+            .getElementById("passwordInput")
+            .value
+            .trim();
+
+    const lockScreen =
+        document.getElementById("lockScreen");
+
+    const birthdayPage =
+        document.getElementById("birthdayPage");
+
+    const hintText =
+        document.getElementById("hintText");
+
+
+    if (
+        entered.toLowerCase() ===
+        SECRET.toLowerCase()
+    ) {
+
+        lockScreen.style.display = "none";
+
+        birthdayPage.style.display = "block";
+
+        startHearts();
+
+        confettiBurst();
+
+        window.scrollTo(0, 0);
+
+    } else {
+
+        hintText.textContent =
+            "Hint: Three magical words that come straight from the heart. ♡";
+
+    }
+
+}
+
+
+document
+    .getElementById("passwordInput")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                unlock();
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   NAME VERIFICATION
+===================================================== */
+
+function verifyName() {
+
+    const name =
+        document
+            .getElementById("nameInput")
+            .value
+            .trim()
+            .toLowerCase();
+
+    const nameHint =
+        document.getElementById("nameHint");
+
+    const personalContent =
+        document.getElementById("personalContent");
+
+    const nameSection =
+        document.getElementById("nameSection");
+
+
+    if (name === "prafull") {
+
+        personalContent
+            .classList
+            .remove("hidden");
+
+        nameSection.style.display = "none";
+
+        confettiBurst();
+
+        personalContent.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    } else {
+
+        nameHint.textContent =
+            "Oops! This little surprise is for Prafull. 🤎";
+
+    }
+
+}
+
+
+/* =====================================================
+   MEMORY NOTES
+===================================================== */
+
+const notes = [
+
+    {
+        title: "Our beginning ♡",
+
+        text:
+        "Some beginnings are planned. Ours wasn't. And maybe that's what made it so beautiful. A random meeting somehow became the beginning of so many memories."
+    },
+
+    {
+        title: "My favourite moment 🤎",
+
+        text:
+        "There are so many moments I could choose, but the little things always stay with me the most — the conversations, hugs, laughs and simply having you around."
+    },
+
+    {
+        title: "A little happiness 🌷",
+
+        text:
+        "Sometimes happiness isn't something huge. Sometimes it's just talking to someone, laughing about something stupid, or knowing they're there."
+    },
+
+    {
+        title: "Forever remembered ✨",
+
+        text:
+        "Whatever happens and wherever life takes us, I'll always be grateful for the memories we've created. Some moments deserve to be remembered forever."
+    }
+
+];
+
+
+function showNote(index) {
+
+    document.getElementById("modalTitle")
+        .textContent =
+        notes[index].title;
+
+    document.getElementById("modalText")
+        .textContent =
+        notes[index].text;
+
+    document.getElementById("memoryModal")
+        .style.display =
+        "flex";
+
+}
+
+
+function closeNote() {
+
+    document.getElementById("memoryModal")
+        .style.display =
+        "none";
+
+}
+
+
+function closeOutside(event) {
+
+    if (
+        event.target ===
+        document.getElementById("memoryModal")
+    ) {
+
+        closeNote();
+
+    }
+
+}
+
+
+/* =====================================================
+   SURPRISE QUESTION
+===================================================== */
+
+function openSurprise() {
+
+    const surpriseQuestion =
+        document.getElementById(
+            "surpriseQuestion"
+        );
+
+    const videoSurprise =
+        document.getElementById(
+            "videoSurprise"
+        );
+
+
+    surpriseQuestion.style.display =
+        "none";
+
+    videoSurprise.style.display =
+        "block";
+
+    confettiBurst();
+
+
+    setTimeout(function() {
+
+        videoSurprise.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "center"
+
+        });
+
+    }, 200);
+
+}
+
+
+function sayNo() {
+
+    const noMessage =
+        document.getElementById(
+            "noMessage"
+        );
+
+    const yesButton =
+        document.getElementById(
+            "yesButton"
+        );
+
+    const noButton =
+        document.getElementById(
+            "noButton"
+        );
+
+
+    noMessage.innerHTML =
+
+        "😂 I KNEW IT! You had to try NO first!<br><br>" +
+
+        "Nice try, Prafull... but this little surprise " +
+
+        "is waiting for you. 🤎<br>" +
+
+        "<strong>Now choose YES 👀</strong>";
+
+
+    yesButton.classList.add(
+        "yes-after-no"
+    );
+
+
+    yesButton.textContent =
+        "YES, SHOW ME THE SURPRISE 🤎";
+
+
+    noButton.textContent =
+        "NOPE 😂";
+
+
+    noButton.style.opacity =
+        "0.55";
+
+
+    confettiBurst();
+
+}
+
+
+/* =====================================================
+   BALLOON MESSAGES
+===================================================== */
+
+const balloonMessages = {
+
+    1:
+    "I hope you always remember that meeting you wasn't just another random moment for me. Somehow, you became someone really special. 🤎",
+
+    2:
+    "Some of my happiest memories have your presence somewhere in them. The laughs, the talks, the hugs... I keep them closer than you probably know. 🥹",
+
+    3:
+    "Even though you're in Mumbai now and life has changed a little, distance can never erase the place you've made for yourself in my heart. 🌙",
+
+    4:
+    "And if I could wish one thing for you today, it would be simple — keep smiling, keep growing, and always know that someone here genuinely cares about you. ❤️"
+
+};
+
+
+let poppedBalloons = 0;
+
+
+function popBalloon(number) {
+
+    const balloon =
+        document.getElementById(
+            "balloon" + number
+        );
+
+    const messageBox =
+        document.getElementById(
+            "balloonMessage"
+        );
+
+
+    if (
+        balloon.classList.contains("pop")
+    ) {
+
+        return;
+
+    }
+
+
+    balloon.classList.add("pop");
+
+    poppedBalloons++;
+
+
+    messageBox.style.opacity = "0";
+
+
+    setTimeout(function() {
+
+        messageBox.textContent =
+            balloonMessages[number];
+
+        messageBox.style.opacity =
+            "1";
+
+    }, 200);
+
+
+    confettiBurst();
+
+
+    if (poppedBalloons === 4) {
+
+        setTimeout(function() {
+
+            document
+                .getElementById(
+                    "allBalloonsMessage"
+                )
+                .classList
+                .add("show");
+
+
+            document
+                .getElementById(
+                    "allBalloonsMessage"
+                )
+                .scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "center"
+
+                });
+
+
+            confettiBurst();
+
+        }, 700);
+
+    }
+
+}
+
+
+/* =====================================================
+   GIFT
+===================================================== */
+
+function openGift() {
+
+    const giftMessage =
+        document.getElementById(
+            "giftMessage"
+        );
+
+    const giftBox =
+        document.getElementById(
+            "giftBox"
+        );
+
+
+    giftBox.textContent =
+        "🎉";
+
+
+    giftMessage
+        .classList
+        .add("show");
+
+
+    confettiBurst();
+
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+function blowCandles() {
+
+    const flame =
+        document.getElementById(
+            "flame"
+        );
+
+
+    flame.classList.add("off");
+
+    confettiBurst();
+
+}
+
+
+/* =====================================================
+   100 REASONS TO LOVE HIM
+===================================================== */
+
+const reasons = [
+
+    /* ---------------- PHYSICAL ---------------- */
+
+    "I love your smile. ❤️",
+
+    "I love your eyes and the way they look at me.",
+
+    "I love your face, especially when you’re not even trying.",
+
+    "I love your voice.",
+
+    "I love the way you look when you’re sleepy.",
+
+    "I love your hugs—they somehow make everything feel okay.",
+
+    "I love being close to you.",
+
+    "I love the warmth of your body when we’re together.",
+
+    "I love your hands.",
+
+    "I love the way you hold my hand.",
+
+    "I love your hair, even when it’s messy.",
+
+    "I love the way you dress.",
+
+    "I love your natural look.",
+
+    "I love your little expressions.",
+
+    "I love the way you laugh.",
+
+    "I love watching you when you don’t know I’m looking.",
+
+    "I love how attractive you are without even realizing it.",
+
+    "I love your cuddles.",
+
+    "I love your kisses.",
+
+    "I love how one look from you can completely distract me. 🙈",
+
+
+    /* ---------------- MENTAL ---------------- */
+
+    "I love the way you think.",
+
+    "I love your intelligence.",
+
+    "I love how you solve problems.",
+
+    "I love learning things from you.",
+
+    "I love your curiosity.",
+
+    "I love the way you see things differently.",
+
+    "I love your sense of humour.",
+
+    "I love how you can make me laugh when I’m upset.",
+
+    "I love your opinions.",
+
+    "I love that you’re not afraid to have your own perspective.",
+
+    "I love how you make me think.",
+
+    "I love our random conversations.",
+
+    "I love our serious conversations.",
+
+    "I love talking to you about absolutely nothing.",
+
+    "I love how comfortable silence feels with you.",
+
+    "I love your ambition.",
+
+    "I love watching you work toward your goals.",
+
+    "I love how you keep learning and growing.",
+
+    "I love your ability to understand situations.",
+
+    "I love the person you’re becoming.",
+
+
+    /* ---------------- EMOTIONAL ---------------- */
+
+    "I love how safe I feel with you.",
+
+    "I love how comfortable I am around you.",
+
+    "I love that I can be completely myself with you.",
+
+    "I love that I can tell you when something is bothering me.",
+
+    "I love how you listen.",
+
+    "I love the comfort you give me.",
+
+    "I love knowing that I have someone I can turn to.",
+
+    "I love how you notice when something is wrong.",
+
+    "I love the way you care about my feelings.",
+
+    "I love how your presence can calm me down.",
+
+    "I love that you make me feel understood.",
+
+    "I love that you remember little things about me.",
+
+    "I love how you make ordinary days feel special.",
+
+    "I love that I can miss you even after just seeing you.",
+
+    "I love how deeply I feel connected to you.",
+
+    "I love the emotional bond we share.",
+
+    "I love how we can be vulnerable with each other.",
+
+    "I love how we find our way back to each other after difficult moments.",
+
+    "I love how much you mean to me.",
+
+    "I love the feeling of knowing that you’re my person. ❤️",
+
+
+    /* ---------------- LITTLE THINGS ---------------- */
+
+    "I love your random messages.",
+
+    "I love your calls.",
+
+    "I love when you send me something because it reminded you of me.",
+
+    "I love your random reels.",
+
+    "I love your good-morning messages.",
+
+    "I love your good-night messages.",
+
+    "I love your little jokes.",
+
+    "I love your silly side.",
+
+    "I love when you tease me.",
+
+    "I love when you get annoyed with me and then eventually come back. 😂",
+
+    "I love our inside jokes.",
+
+    "I love the memories we’ve created.",
+
+    "I love remembering our conversations.",
+
+    "I love the places we’ve been together.",
+
+    "I love the moments that nobody else knows about.",
+
+    "I love our stupid arguments that eventually turn into laughter.",
+
+    "I love how even boring moments become memorable with you.",
+
+    "I love hearing you talk about things you’re passionate about.",
+
+    "I love seeing you happy.",
+
+    "I love the little ways you show that you care.",
+
+
+    /* ---------------- US ---------------- */
+
+    "I love how natural our connection feels.",
+
+    "I love how easily we can talk.",
+
+    "I love how we can be serious one minute and idiots the next. 😂",
+
+    "I love how many memories we already have.",
+
+    "I love the feeling of being around you.",
+
+    "I love how you’ve become such an important part of my everyday life.",
+
+    "I love that you know sides of me that not everyone gets to see.",
+
+    "I love the way we understand each other's moods.",
+
+    "I love how we can miss each other and still feel connected.",
+
+    "I love that our relationship has its own little world.",
+
+    "I love the comfort of knowing you’re there.",
+
+    "I love making plans with you.",
+
+    "I love imagining future memories with you.",
+
+    "I love growing alongside you.",
+
+    "I love that you challenge me to become better.",
+
+    "I love that being with you feels like both excitement and comfort.",
+
+    "I love the person I become when I’m loved by you.",
+
+    "I love every version of you—the happy one, sleepy one, silly one, serious one and even the annoying one. 😭",
+
+    "I love you for all the things you are and all the little things you don’t realise you are.",
+
+    "And most importantly, I love you simply because you’re YOU. No checklist, no perfect reason, no explanation. Somehow, out of all the people in this world, my heart chose you—and honestly, it still chooses you every single day. ❤️"
+
+];
+
+
+let reasonIndex = 0;
+
+
+function nextReason() {
+
+    reasonIndex++;
+
+
+    if (
+        reasonIndex >= reasons.length
+    ) {
+
+        reasonIndex = 0;
+
+    }
+
+
+    document.getElementById(
+        "reasonText"
+    ).textContent =
+        reasons[reasonIndex];
+
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+function revealFinal() {
+
+    const finalMessage =
+        document.getElementById(
+            "finalMessage"
+        );
+
+    const finalButton =
+        document.getElementById(
+            "finalButton"
+        );
+
+
+    finalMessage
+        .classList
+        .add("show");
+
+
+    finalButton.textContent =
+        "♡";
+
+
+    finalButton.disabled =
+        true;
+
+
+    confettiBurst();
+
+
+    finalMessage.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "center"
+
+    });
+
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+const music =
+    document.getElementById(
+        "bgMusic"
+    );
+
+const musicBtn =
+    document.getElementById(
+        "musicBtn"
+    );
+
+
+function toggleMusic() {
+
+    if (music.paused) {
+
+        music.play()
+            .then(function() {
+
+                musicBtn.textContent =
+                    "♫ Pause music";
+
+            })
+            .catch(function() {
+
+                musicBtn.textContent =
+                    "Tap again to play ♫";
+
+            });
+
+    } else {
+
+        music.pause();
+
+        musicBtn.textContent =
+            "♫ Play music";
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+let heartsStarted = false;
+
+
+function startHearts() {
+
+    if (heartsStarted) return;
+
+    heartsStarted = true;
+
+
+    setInterval(function() {
+
+        const heart =
+            document.createElement("div");
+
+
+        heart.className =
+            "floating-heart";
+
+
+        heart.textContent =
+            Math.random() > 0.5
+                ? "♡"
+                : "♥";
+
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+
+        heart.style.fontSize =
+            (14 + Math.random() * 18) +
+            "px";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(function() {
+
+            heart.remove();
+
+        }, 7000);
+
+
+    }, 600);
+
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+function confettiBurst() {
+
+    const symbols =
+        ["✦", "♡", "✧", "•"];
+
+
+    for (
+        let i = 0;
+        i < 65;
+        i++
+    ) {
+
+        const piece =
+            document.createElement("div");
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.textContent =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        piece.style.left =
+            Math.random() * 100 +
+            "vw";
+
+
+        piece.style.fontSize =
+            (10 + Math.random() * 16) +
+            "px";
+
+
+        piece.style.animationDuration =
+            (2 + Math.random() * 2) +
+            "s";
+
+
+        piece.style.animationDelay =
+            Math.random() * 0.5 +
+            "s";
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        setTimeout(function() {
+
+            piece.remove();
+
+        }, 4500);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
